@@ -79,7 +79,12 @@ def calc_sobelX_pixel(win=[], sobelY=[]):
 
 
 def calc_sobelXY_pixel(sobelX, sobelY):
-    if sobelX > 125 or sobelY > 125:
+    # This is a simple way to calculate the magnitude of the gradient
+    # If the magnitude is greater than 125, then the pixel is white
+    # Otherwise, it is black
+    # It could be changed to show more or less details
+    magnitude = 125
+    if sobelX > magnitude or sobelY > magnitude:
         return 255
     else:
         return 0
